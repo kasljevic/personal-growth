@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Growth Arc</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            margin: 1rem auto;
+            max-width: 64rem;
+            width: 100%;
+        }
+        .card-header {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .card-subtitle {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .stage-box {
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 0.5rem;
+        }
+        .stage-box.rookie {
+            background: #dcfce7;
+            border: 1px solid #86efac;
+        }
+        .stage-box.burnout {
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+        }
+        .stage-box.sage {
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
+        }
+        .stage-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .stage-list {
+            font-size: 0.875rem;
+            list-style-type: none;
+            padding: 0;
+        }
+        .stage-list li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-icons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .footer-icon {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="card">
+        <div class="card-header">
+            <h1 class="card-title">Personal Growth Arc</h1>
+            <p class="card-subtitle">(The Corporate Edition)</p>
+        </div>
+        <div class="card-content">
+            <svg viewBox="0 0 800 600" class="w-full h-[600px]">
+                <!-- Background Grid -->
+                <defs>
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="0.5" stroke-opacity="0.1" />
+                    </pattern>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#4ade80" />
+                        <stop offset="50%" stop-color="#f87171" />
+                        <stop offset="100%" stop-color="#60a5fa" />
+                    </linearGradient>
+                </defs>
+                <rect width="800" height="600" fill="url(#grid)" />
+
+                <!-- Growth Arc Path -->
+                <path
+                    d="M 100,300 Q 400,400 400,300 T 700,200"
+                    fill="none"
+                    stroke="url(#gradient)"
+                    stroke-width="4"
+                />
+
+                <!-- Stage Points -->
+                <circle cx="100" cy="300" r="8" fill="#4ade80" />
+                <circle cx="400" cy="300" r="8" fill="#f87171" />
+                <circle cx="700" cy="200" r="8" fill="#60a5fa" />
+
+                <!-- Stage Labels -->
+                <text x="100" y="280" text-anchor="middle" class="text-lg font-bold">Naivety</text>
+                <text x="400" y="280" text-anchor="middle" class="text-lg font-bold">Cynicism</text>
+                <text x="700" y="180" text-anchor="middle" class="text-lg font-bold">Wisdom</text>
+
+                <!-- Stage Boxes -->
+                <foreignObject x="20" y="340" width="160" height="200">
+                    <div class="stage-box rookie">
+                        <p class="stage-title text-green-800">The Rookie</p>
+                        <ul class="stage-list text-green-700">
+                            <li>"My ideas will revolutionize this company!"</li>
+                            <li>"Everyone here is so nice and helpful!"</li>
+                            <li>"I'll definitely use everything I learned in college!"</li>
+                            <li>"Can't wait for my performance review!"</li>
+                        </ul>
+                    </div>
+                </foreignObject>
+
+                <foreignObject x="320" y="340" width="160" height="200">
+                    <div class="stage-box burnout">
+                        <p class="stage-title text-red-800">The Burnout</p>
+                        <ul class="stage-list text-red-700">
+                            <li>"It's all office politics anyway"</li>
+                            <li>"This meeting could've been an email"</li>
+                            <li>"I'm just here for the paycheck"</li>
+                            <li>"Everything is broken and no one cares"</li>
+                        </ul>
+                    </div>
+                </foreignObject>
+
+                <foreignObject x="620" y="240" width="160" height="200">
+                    <div class="stage-box sage">
+                        <p class="stage-title text-blue-800">The Sage</p>
+                        <ul class="stage-list text-blue-700">
+                            <li>"Let's focus on what we can change"</li>
+                            <li>"The system isn't perfect, but I know how to work with it"</li>
+                            <li>"Maybe we should talk to other teams first"</li>
+                            <li>"I've seen this before - here's what worked"</li>
+                        </ul>
+                    </div>
+                </foreignObject>
+            </svg>
+
+            <div class="footer-icons">
+                <div class="footer-icon">
+                    <svg class="w-6 h-6 mx-auto mb-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                    <p>Fresh out of college, powered by optimism and energy drinks</p>
+                </div>
+                <div class="footer-icon">
+                    <svg class="w-6 h-6 mx-auto mb-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                    </svg>
+                    <p>Three years in, runs on coffee and spite</p>
+                </div>
+                <div class="footer-icon">
+                    <svg class="w-6 h-6 mx-auto mb-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                    </svg>
+                    <p>Five years in, has mastered the art of strategic meeting naps</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
